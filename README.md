@@ -6,10 +6,19 @@ This repository contains a reference implementation of an ELITEA/Pylon integrati
 
 This repository includes comprehensive documentation for creating ELITEA/Pylon integration plugins:
 
-- **[Step-by-Step Guide](STEP_BY_STEP_GUIDE.md)** - 🎯 **START HERE** - Complete walkthrough building an image processing plugin from scratch
-- **[Integration Guide](INTEGRATION_GUIDE.md)** - Complete guide covering architecture, components, and implementation
-- **[Quick Start Template](QUICK_START_TEMPLATE.md)** - Minimal working template to get started quickly  
-- **[Integration Patterns](INTEGRATION_PATTERNS.md)** - Common patterns for different types of tool integrations
+### 🚀 Getting Started
+- **[Step-by-Step Guide](docs/STEP_BY_STEP_GUIDE.md)** - 🎯 **START HERE** - Complete walkthrough building an image processing plugin from scratch
+- **[Quick Start Template](docs/QUICK_START_TEMPLATE.md)** - Minimal working template to get started quickly
+
+### 📖 Reference Documentation  
+- **[Integration Guide](docs/INTEGRATION_GUIDE.md)** - Complete guide covering architecture, components, and implementation
+- **[Integration Patterns](docs/INTEGRATION_PATTERNS.md)** - Common patterns for different types of tool integrations
+
+### 🛠️ Template Setup
+- **[Template README](docs/TEMPLATE_README.md)** - How to use this repository as a template for new plugins
+- **[Template Setup Instructions](docs/TEMPLATE_SETUP_INSTRUCTIONS.md)** - Creating the template repository structure
+
+> **📋 Documentation Index**: See [docs/DOCUMENTATION_INDEX.md](docs/DOCUMENTATION_INDEX.md) for complete navigation guide
 
 ## 🏗️ Architecture Overview
 
@@ -127,41 +136,38 @@ This implementation demonstrates several common patterns:
 
 ## 📖 Creating Your Own Plugin
 
-**New to ELITEA/Pylon plugins?** Follow these steps:
+**New to ELITEA/Pylon plugins?** Choose your path:
 
-### 🚀 Quick Start with Template
+### 🏃‍♂️ Quick Start (5 minutes)
+1. **⚡ [Use the Quick Start Template](docs/QUICK_START_TEMPLATE.md)** - Minimal working example
+2. **🧪 Test with the setup script**: `python setup_template.py`
 
-1. **🎯 [Use the Template Repository](https://github.com/your-org/elitea-pylon-plugin-template)**
-   - Click "Use this template" → Create new repository
-   - Clone your new repository locally
-   - Run `python setup_template.py` for guided setup
+### 📚 Learn by Building (30 minutes)
+1. **🎯 [Follow the Step-by-Step Guide](docs/STEP_BY_STEP_GUIDE.md)** - Build a complete image processing plugin from scratch
+2. **📋 Study [Integration Patterns](INTEGRATION_PATTERNS.md)** - Find patterns for your specific tool type
 
-2. **📚 Learn with Step-by-Step Guide**
-   - **🚀 [Start with the Step-by-Step Guide](STEP_BY_STEP_GUIDE.md)** - Build a complete image processing plugin from scratch
-
-3. **📋 Reference Documentation**
-   - **⚡ Use the [Quick Start Template](QUICK_START_TEMPLATE.md)** for a minimal working example
-   - **📋 Study the [Integration Patterns](INTEGRATION_PATTERNS.md)** for your specific tool type
-   - **📖 Reference the [Integration Guide](INTEGRATION_GUIDE.md)** for comprehensive implementation details
-   - **🔍 Use this Slidev implementation** as a reference for complex setups
+### 🔧 Template for Production
+1. **📦 [Use as Template Repository](TEMPLATE_README.md)** - Create new plugins from this template
+2. **📖 Reference the [Integration Guide](docs/INTEGRATION_GUIDE.md)** - Comprehensive implementation details
+3. **🔍 Use this Slidev implementation** as a reference for complex setups
 
 ### 🛠️ Template Repository Features
 
 The template repository provides:
-- **🎯 Interactive Setup** - Guided configuration for your specific tool
-- **🧪 Built-in Testing** - Comprehensive test suite 
+- **🎯 Interactive Setup** - Guided configuration with `python setup_template.py`
+- **🧪 Built-in Testing** - Comprehensive test suite with `python test_plugin.py`
 - **📁 Complete Structure** - All files with proper placeholders
 - **📚 Documentation** - Links to guides and examples
 
 ## 🤝 Common Integration Types
 
 The documentation covers patterns for:
-- **Python libraries** (PIL, pandas, etc.)
-- **CLI tools** (FFmpeg, ImageMagick, etc.)
-- **Node.js tools** (like this Slidev example)
-- **REST APIs** (external services)
-- **Databases** (SQL processing)
-- **Machine Learning models** (TensorFlow, etc.)
+- **🐍 Python libraries** (PIL, pandas, scikit-learn)
+- **🛠️ CLI tools** (FFmpeg, ImageMagick, Pandoc)
+- **🌐 Node.js tools** (like this Slidev example)
+- **📊 REST APIs** (external services)
+- **🗄️ Databases** (SQL processing)
+- **🤖 Machine Learning models** (TensorFlow, PyTorch)
 
 ## 📝 License
 

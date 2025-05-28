@@ -1,6 +1,12 @@
 # Common Integration Patterns for ELITEA/Pylon Plugins
 
-This document covers common patterns and examples for different types of tool integrations.
+This document covers common patterns and examples for different types of tool integrations. Each pattern includes working code examples you can adapt for your own plugins.
+
+> **🚀 New to plugin development?** Start with the [Step-by-Step Guide](STEP_BY_STEP_GUIDE.md) first.
+> 
+> **⚡ Want a minimal example?** Check the [Quick Start Template](QUICK_START_TEMPLATE.md).
+> 
+> **📖 Need comprehensive details?** See the [Integration Guide](INTEGRATION_GUIDE.md).
 
 ## Pattern 1: Python Library Integration
 

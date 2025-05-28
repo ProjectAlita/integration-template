@@ -1,6 +1,12 @@
 # Quick Start Template for ELITEA/Pylon Plugins
 
-This template provides a minimal working example to get you started with creating ELITEA/Pylon integration plugins.
+This template provides a minimal working example to get you started with creating ELITEA/Pylon integration plugins in under 5 minutes.
+
+> **📚 Want to learn how it works?** Follow the detailed [Step-by-Step Guide](STEP_BY_STEP_GUIDE.md).
+> 
+> **🔍 Need specific patterns?** Check [Integration Patterns](INTEGRATION_PATTERNS.md) for your tool type.
+> 
+> **🧪 Ready to use the template?** Run `python setup_template.py` in this repository.
 
 ## 1. Create Project Structure
 
@@ -330,9 +336,20 @@ curl http://localhost:8080/health
 
 ## 6. Next Steps
 
+### 🔧 Customize Your Plugin
 1. **Replace the example logic** with your actual tool implementation
-2. **Update the descriptor** to match your tool's interface
+2. **Update the descriptor** to match your tool's interface  
 3. **Add proper error handling** for your specific use cases
+
+### 📚 Learn More
+- **📖 [Step-by-Step Guide](STEP_BY_STEP_GUIDE.md)** - Complete walkthrough with detailed explanations
+- **📋 [Integration Patterns](INTEGRATION_PATTERNS.md)** - Find patterns for your specific tool type
+- **🔍 [Integration Guide](INTEGRATION_GUIDE.md)** - Comprehensive reference documentation
+- **🧪 Use the template script** - Run `python setup_template.py` for guided setup
+
+### 🚀 Production Ready
+- **🛠️ [Template Setup](TEMPLATE_SETUP_INSTRUCTIONS.md)** - Create template repositories
+- **🎯 [Slidev Example](../README.md)** - Study the complex Slidev integration as reference
 4. **Add configuration options** in `config.yml` as needed
 5. **Test thoroughly** with various inputs and error scenarios
 

@@ -818,12 +818,12 @@ def process_with_cleanup(self, parameters):
 
 ## Next Steps
 
-1. **Study the Slidev Example**: For complex external tool integration
-2. **Read Integration Patterns**: For specific tool types (CLI, API, etc.)
-3. **Check the Quick Start Template**: For minimal working examples
-4. **Implement Error Handling**: Add comprehensive error handling and logging
-5. **Add Tests**: Create unit tests for your tool methods
-6. **Documentation**: Document your plugin's API and configuration options
+1. **🔧 Study the Slidev Example**: For complex external tool integration, see [this repository's Slidev implementation](../README.md)
+2. **📋 Read Integration Patterns**: For specific tool types, check [Integration Patterns](INTEGRATION_PATTERNS.md)
+3. **⚡ Use the Quick Start Template**: For minimal working examples, see [Quick Start Template](QUICK_START_TEMPLATE.md)
+4. **📖 Reference the Integration Guide**: For comprehensive details, see [Integration Guide](INTEGRATION_GUIDE.md)
+5. **🧪 Set up Testing**: Use `python setup_template.py` and `python test_plugin.py` for development
+6. **🛠️ Create from Template**: Use [Template Setup Instructions](TEMPLATE_SETUP_INSTRUCTIONS.md) to create your own template repository
 
 ---
 

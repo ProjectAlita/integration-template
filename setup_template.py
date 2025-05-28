@@ -158,15 +158,18 @@ def format_tools_for_descriptor(tools_schema):
     tool_lines = []
     for tool in tools_schema:
         # Format args_schema
-        args_lines = []
+        args_schema_lines = []
         for param_name, param_info in tool.get("args_schema", {}).items():
-            args_lines.append(f'                    "{param_name}": {{')
-            args_lines.append(f'                        "type": "{param_info["type"]}",')
-            args_lines.append(f'                        "required": {param_info["required"]},')
-            args_lines.append(f'                        "description": "{param_info["description"]}"')
-            args_lines.append('                    }')
+            param_lines = [
+                f'                        "{param_name}": {{',
+                f'                            "type": "{param_info["type"]}",',
+                f'                            "required": {param_info["required"]},',
+                f'                            "description": "{param_info["description"]}"',
+                '                        }'
+            ]
+            args_schema_lines.append('\n'.join(param_lines))
         
-        args_schema_str = ",\n".join(args_lines) if args_lines else ""
+        args_schema_str = ",\n".join(args_schema_lines) if args_schema_lines else ""
         
         # Format the tool
         tool_str = f'''                {{
@@ -490,6 +493,9 @@ class Method:
     # Generate tool schema with proper formatting
     tools_schema = generate_tool_schema(config['tools'])
     
+    # Format the tools for the descriptor
+    formatted_tools = format_tools_for_descriptor(tools_schema)
+    
     descriptor_content = f'''#!/usr/bin/python3
 # coding=utf-8
 
@@ -519,14 +525,9 @@ class Route:
                         "description": "Configuration for {{{{PLUGIN_NAME}}}}.",
                         "parameters": {{}}
                     }},
-                    "provided_tools": {format_tools_for_descriptor(tools_schema)},
+                    "provided_tools": {formatted_tools},
                     "toolkit_metadata": {{}}
                 }}
-            ]
-        }}
-        
-        return descriptor
-                }},
             ]
         }}
         
@@ -537,12 +538,20 @@ class Route:
         f.write(descriptor_content)
     
     # routes/invoke.py
+    # Generate tool route conditionals
     tool_routes = []
     for tool in config['tools']:
-        tool_routes.append(f'''        elif tool_name == "{tool['name']}":
-            result = self._handle_{tool['name']}(parameters)''')
+        tool_routes.append(f'''            if tool_name == "{tool['name']}":
+                result = self._handle_{tool['name']}(parameters)''')
     
-    tool_route_code = '\n'.join(tool_routes)
+    # Create proper if-elif chain
+    if tool_routes:
+        tool_route_code = tool_routes[0]  # First tool uses 'if'
+        for route in tool_routes[1:]:
+            tool_route_code += '\n            el' + route[12:]  # Add 'el' to make it 'elif'
+    else:
+        tool_route_code = ''
+    
     invoke_methods = generate_invoke_methods(config['tools'])
     
     invoke_content = f'''#!/usr/bin/python3
@@ -583,8 +592,7 @@ class Route:
             parameters = request_data["parameters"]
             
             # Route to appropriate tool
-            if False:  # Placeholder for if-elif chain
-                pass{tool_route_code}
+{tool_route_code}
             else:
                 return {{
                     "errorCode": "404",
@@ -719,8 +727,8 @@ def main():
     print(f"4. Update README.md with your plugin documentation")
     
     print(f"\n📚 Resources:")
-    print(f"- Step-by-step guide: https://github.com/your-org/slidev-host/blob/main/STEP_BY_STEP_GUIDE.md")
-    print(f"- Integration patterns: https://github.com/your-org/slidev-host/blob/main/INTEGRATION_PATTERNS.md")
+    print(f"- Step-by-step guide: docs/STEP_BY_STEP_GUIDE.md")
+    print(f"- Integration patterns: docs/INTEGRATION_PATTERNS.md")
 
 
 if __name__ == "__main__":

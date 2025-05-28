@@ -19,18 +19,23 @@ cd my-tool-plugin
 python setup_template.py
 ```
 
-The setup script will prompt you for:
+The setup script will interactively prompt you for:
 - **Plugin name** (e.g., "ImageProcessor", "VideoConverter")
-- **Tool names** (e.g., "resize_image", "convert_video") 
-- **Description** of what your plugin does
+- **Tool names** and descriptions (e.g., "resize_image", "convert_video") 
+- **Parameters** for each tool
 - **Dependencies** your tool needs
+- **Configuration options**
 
 ### 3. Implement Your Logic
 
-After running the setup script:
-1. Add your tool logic in `methods/tool_operations.py`
-2. Install dependencies in `methods/dependencies.py`
-3. Test your plugin with the provided test scripts
+After running the setup script, you'll have a complete plugin structure:
+
+1. **Add your tool logic** in `methods/tool_operations.py`
+2. **Install dependencies** in `methods/dependencies.py` 
+3. **Test your plugin** with `python test_plugin.py`
+4. **Customize configuration** in `config.yml`
+
+> **💡 Need help?** Check the generated files for TODO comments and example implementations.
 
 ## 📁 Template Structure
 
@@ -132,9 +137,9 @@ curl http://localhost:8080/health
 
 ## 📚 Learning Resources
 
-- **[Step-by-Step Guide](https://github.com/your-org/slidev-host/blob/main/STEP_BY_STEP_GUIDE.md)** - Complete walkthrough
-- **[Integration Patterns](https://github.com/your-org/slidev-host/blob/main/INTEGRATION_PATTERNS.md)** - Common patterns
-- **[Slidev Example](https://github.com/your-org/slidev-host)** - Real-world reference implementation
+- **[Step-by-Step Guide](STEP_BY_STEP_GUIDE.md)** - Complete walkthrough
+- **[Integration Patterns](INTEGRATION_PATTERNS.md)** - Common patterns
+- **[Slidev Example](../README.md)** - Real-world reference implementation
 
 ## 🔧 Common Plugin Types
 
