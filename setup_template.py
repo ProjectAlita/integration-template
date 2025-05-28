@@ -150,6 +150,46 @@ def generate_tool_schema(tools):
     return tool_schemas
 
 
+def format_tools_for_descriptor(tools_schema):
+    """Format tools schema as clean Python code for the descriptor"""
+    if not tools_schema:
+        return "[]"
+    
+    tool_lines = []
+    for tool in tools_schema:
+        # Format args_schema
+        args_lines = []
+        for param_name, param_info in tool.get("args_schema", {}).items():
+            args_lines.append(f'                    "{param_name}": {{')
+            args_lines.append(f'                        "type": "{param_info["type"]}",')
+            args_lines.append(f'                        "required": {param_info["required"]},')
+            args_lines.append(f'                        "description": "{param_info["description"]}"')
+            args_lines.append('                    }')
+        
+        args_schema_str = ",\n".join(args_lines) if args_lines else ""
+        
+        # Format the tool
+        tool_str = f'''                {{
+                    "name": "{tool["name"]}",
+                    "args_schema": {{
+{args_schema_str}
+                    }},
+                    "description": "{tool["description"]}",
+                    "tool_metadata": {{
+                        "result_target": "{tool["tool_metadata"]["result_target"]}",
+                        "result_extension": "{tool["tool_metadata"]["result_extension"]}",
+                        "result_encoding": "{tool["tool_metadata"]["result_encoding"]}"
+                    }},
+                    "tool_result_type": "{tool["tool_result_type"]}",
+                    "sync_invocation_supported": {tool["sync_invocation_supported"]},
+                    "async_invocation_supported": {tool["async_invocation_supported"]}
+                }}'''
+        
+        tool_lines.append(tool_str)
+    
+    return "[\n" + ",\n".join(tool_lines) + "\n            ]"
+
+
 def generate_invoke_methods(tools):
     """Generate method implementations for tools"""
     methods = []
@@ -447,7 +487,9 @@ class Method:
         f.write('#!/usr/bin/python3\n# coding=utf-8\n""" {{PLUGIN_NAME}} Routes """\n')
     
     # routes/descriptor.py
-    tools_json = json.dumps(generate_tool_schema(config['tools']), indent=20)
+    # Generate tool schema with proper formatting
+    tools_schema = generate_tool_schema(config['tools'])
+    
     descriptor_content = f'''#!/usr/bin/python3
 # coding=utf-8
 
@@ -475,10 +517,15 @@ class Route:
                     "toolkit_config": {{
                         "type": "{{{{PLUGIN_NAME}}}} Configuration",
                         "description": "Configuration for {{{{PLUGIN_NAME}}}}.",
-                        "parameters": {{}},
+                        "parameters": {{}}
                     }},
-                    "provided_tools": {tools_json},
-                    "toolkit_metadata": {{}},
+                    "provided_tools": {format_tools_for_descriptor(tools_schema)},
+                    "toolkit_metadata": {{}}
+                }}
+            ]
+        }}
+        
+        return descriptor
                 }},
             ]
         }}
