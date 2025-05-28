@@ -1,6 +1,6 @@
 # Template Repository Setup Instructions
 
-Follow these steps to create a GitHub template repository from this Slidev reference implementation:
+Follow these steps to create a GitHub template repository from this integration template reference implementation:
 
 ## 🎯 Creating the Template Repository
 
@@ -15,9 +15,9 @@ cd elitea-pylon-plugin-template
 2. **Copy the core template files:**
 ```bash
 # Copy the template-specific files
-cp ../slidev_host/TEMPLATE_README.md ./README.md
-cp ../slidev_host/setup_template.py ./
-cp ../slidev_host/test_plugin.py ./
+cp ../integration-template/TEMPLATE_README.md ./README.md
+cp ../integration-template/setup_template.py ./
+cp ../integration-template/test_plugin.py ./
 
 # Create template structure with placeholders
 mkdir -p methods routes
@@ -125,7 +125,7 @@ Once the template is set up, users can:
 ## 🔗 Reference Links
 
 In the template README, include links to:
-- This Slidev implementation as a complex example
+- This integration template implementation as a complex example
 - Step-by-step guide for detailed learning
 - Integration patterns for specific tool types
 - ELITEA platform documentation
@@ -165,6 +165,6 @@ Users will be able to:
 2. Follow guided setup for their specific tool
 3. Get a working plugin with proper structure
 4. Test everything before deployment
-5. Reference the Slidev implementation for advanced patterns
+5. Reference this template implementation for advanced patterns
 
 This creates a smooth developer experience for anyone wanting to integrate their tools with ELITEA!

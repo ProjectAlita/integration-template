@@ -310,8 +310,8 @@ def process_with_my_tool(self, input_data, options):
     return result.stdout
 ```
 
-### For Node.js tools (like the Slidev example):
-1. **Add Node.js setup** following the `methods/binaries.py` pattern from Slidev
+### For Node.js tools (like the template example):
+1. **Add Node.js setup** following the `methods/binaries.py` pattern from the template
 2. **Install npm packages** during initialization
 3. **Execute Node.js commands** with proper environment setup
 
@@ -349,7 +349,7 @@ curl http://localhost:8080/health
 
 ### 🚀 Production Ready
 - **🛠️ [Template Setup](TEMPLATE_SETUP_INSTRUCTIONS.md)** - Create template repositories
-- **🎯 [Slidev Example](../README.md)** - Study the complex Slidev integration as reference
+- **🎯 [Integration Template Example](../README.md)** - Study the template integration as reference
 4. **Add configuration options** in `config.yml` as needed
 5. **Test thoroughly** with various inputs and error scenarios
 

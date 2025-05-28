@@ -1,6 +1,6 @@
 # ELITEA/Pylon Integration Plugin Development Guide
 
-This comprehensive reference guide explains how to create integration plugins for the ELITEA platform using the Pylon framework. The Slidev integration in this repository serves as a reference implementation for integrating external tools and systems.
+This comprehensive reference guide explains how to create integration plugins for the ELITEA platform using the Pylon framework. This template provides examples for integrating Python libraries, Node.js modules, CLI tools, and other external systems.
 
 > **💡 Quick Start**: New to plugin development? Start with the [Step-by-Step Guide](STEP_BY_STEP_GUIDE.md) or [Quick Start Template](QUICK_START_TEMPLATE.md).
 > 
@@ -531,4 +531,4 @@ class Route:
 4. **Monitoring**: Implement logging and health checks
 5. **Scaling**: Consider stateless design for horizontal scaling
 
-This guide provides a comprehensive foundation for creating ELITEA/Pylon integration plugins. Use the Slidev implementation as a reference and adapt the patterns to your specific tool requirements.
+This guide provides a comprehensive foundation for creating ELITEA/Pylon integration plugins. Use this template implementation as a reference and adapt the patterns to your specific tool requirements.

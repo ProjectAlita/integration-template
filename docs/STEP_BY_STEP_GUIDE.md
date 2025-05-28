@@ -656,7 +656,7 @@ class Route:
 
 ## Step 7: External Dependencies
 
-For plugins that need external tools (like the Slidev example with Node.js), you'll need dependency management.
+For plugins that need external tools (like Node.js modules or Python packages), you'll need dependency management.
 
 ### 7.1 Example: Python Library Management
 
@@ -676,13 +676,13 @@ def check_dependencies(self):
 
 ### 7.2 Example: External Binary Management
 
-For complex setups like Node.js (see the Slidev example), create `methods/binaries.py`:
+For complex setups like Node.js (see the template example), create `methods/binaries.py`:
 
 ```python
 @web.method()
 def download_external_tool(self, config):
     """ Download and setup external tools """
-    # Implementation similar to slidev_host/methods/binaries.py
+    # Implementation similar to integration-template/methods/binaries.py
     pass
 ```
 
@@ -818,7 +818,7 @@ def process_with_cleanup(self, parameters):
 
 ## Next Steps
 
-1. **🔧 Study the Slidev Example**: For complex external tool integration, see [this repository's Slidev implementation](../README.md)
+1. **🔧 Study the Template Example**: For complex external tool integration, see [this repository's template implementation](../README.md)
 2. **📋 Read Integration Patterns**: For specific tool types, check [Integration Patterns](INTEGRATION_PATTERNS.md)
 3. **⚡ Use the Quick Start Template**: For minimal working examples, see [Quick Start Template](QUICK_START_TEMPLATE.md)
 4. **📖 Reference the Integration Guide**: For comprehensive details, see [Integration Guide](INTEGRATION_GUIDE.md)

@@ -139,7 +139,7 @@ curl http://localhost:8080/health
 
 - **[Step-by-Step Guide](STEP_BY_STEP_GUIDE.md)** - Complete walkthrough
 - **[Integration Patterns](INTEGRATION_PATTERNS.md)** - Common patterns
-- **[Slidev Example](../README.md)** - Real-world reference implementation
+- **[Integration Template Example](../README.md)** - Real-world reference implementation
 
 ## 🔧 Common Plugin Types
 

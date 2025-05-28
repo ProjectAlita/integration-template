@@ -130,7 +130,7 @@ class Route:
 
 ## Pattern 3: Node.js Tool Integration
 
-For integrating Node.js-based tools (following Slidev pattern):
+For integrating Node.js-based tools (following template pattern):
 
 ### Example: Puppeteer Web Scraping
 

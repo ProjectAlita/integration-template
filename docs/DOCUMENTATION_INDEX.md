@@ -36,7 +36,7 @@ This repository contains a complete set of documentation for creating ELITEA/Pyl
 
 ## 🎯 Real-World Example
 
-This repository itself contains a **complete Slidev integration** that demonstrates:
+This repository itself contains a **complete integration template** that demonstrates:
 - External binary management (Node.js)
 - Package installation (npm packages)
 - Environment setup
@@ -63,7 +63,7 @@ Study the [main README](../README.md) and the actual plugin files for a producti
 │   ├── Template Setup Instructions (creating templates)
 │   └── Test Suite (python test_plugin.py)
 └── 🎯 Real Example
-    └── Slidev Integration (this repository)
+    └── Integration Template (this repository)
 ```
 
 ## 🆘 Need Help?
@@ -72,7 +72,7 @@ Study the [main README](../README.md) and the actual plugin files for a producti
 2. **Understanding concepts**: Read the [Step-by-Step Guide](STEP_BY_STEP_GUIDE.md)  
 3. **Finding patterns**: Check [Integration Patterns](INTEGRATION_PATTERNS.md)
 4. **Technical details**: Reference the [Integration Guide](INTEGRATION_GUIDE.md)
-5. **Real example**: Study this repository's Slidev implementation
+5. **Real example**: Study this repository's template implementation
 
 ---
 
